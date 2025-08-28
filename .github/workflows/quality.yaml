@@ -1,0 +1,46 @@
+name: Quality Checks
+on:
+  workflow_call:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        check: [format, lint, typecheck, build]
+        include:
+          - check: format
+            name: "Format Check"
+            command: "pnpm prettier --check ."
+          - check: lint
+            name: "Lint Check"
+            command: "pnpm eslint ."
+          - check: typecheck
+            name: "Type Check"
+            command: "pnpm check"
+          - check: build
+            name: "Build Check"
+            command: "pnpm build"
+
+    name: ${{ matrix.name }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: ${{ matrix.name }}
+        run: ${{ matrix.command }}
