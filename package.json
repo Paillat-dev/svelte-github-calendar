@@ -55,11 +55,6 @@
 	"keywords": [
 		"svelte"
 	],
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
-	},
 	"dependencies": {
 		"github-calendar": "^2.3.4"
 	}
