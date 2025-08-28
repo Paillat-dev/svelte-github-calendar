@@ -145,6 +145,10 @@
 				font-size: 11px !important;
 			}
 
+            .contrib-column span {
+                color: #000 !important;
+            }
+
 			.contrib-column-first {
 				border-left: 0 !important;
 			}
@@ -191,6 +195,10 @@
 				box-sizing: border-box !important;
 				height: 26px !important;
 			}
+
+            .calendar .text-muted {
+                color: inherit !important;
+            }
 
 			.left.text-muted {
 				float: left !important;
