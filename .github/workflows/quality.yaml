@@ -11,17 +11,17 @@ jobs:
         check: [format, lint, typecheck, build]
         include:
           - check: format
-            name: "Format Check"
-            command: "pnpm prettier --check ."
+            name: 'Format Check'
+            command: 'pnpm prettier --check .'
           - check: lint
-            name: "Lint Check"
-            command: "pnpm eslint ."
+            name: 'Lint Check'
+            command: 'pnpm eslint .'
           - check: typecheck
-            name: "Type Check"
-            command: "pnpm check"
+            name: 'Type Check'
+            command: 'pnpm check'
           - check: build
-            name: "Build Check"
-            command: "pnpm build"
+            name: 'Build Check'
+            command: 'pnpm build'
 
     name: ${{ matrix.name }}
     steps:
