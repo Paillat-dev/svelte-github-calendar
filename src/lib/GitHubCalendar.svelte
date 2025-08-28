@@ -22,9 +22,7 @@
 	});
 </script>
 
-<div class={`calendar-holder ${className}`}>
-	<div class="calendar"></div>
-</div>
+<div class={`calendar ${className}`}></div>
 
 <style global>
 	:root {
@@ -35,7 +33,6 @@
 		--color-calendar-graph-day-L4-bg: #0a4208 !important;
 	}
 	:global {
-		.calendar-holder {
 			.ContributionCalendar-day[data-level='0'] {
 				background-color: var(--color-calendar-graph-day-bg) !important;
 			}
@@ -275,5 +272,5 @@
 				}
 			}
 		}
-	}
+
 </style>
