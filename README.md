@@ -14,7 +14,7 @@ npm install svelte-github-calendar
 
 ```svelte
 <script>
-  import { GithubCalendar } from 'svelte-github-calendar';
+	import { GithubCalendar } from 'svelte-github-calendar';
 </script>
 
 <GithubCalendar username="yourusername" />
@@ -24,24 +24,24 @@ npm install svelte-github-calendar
 
 ```svelte
 <script>
-  import { GithubCalendar } from 'svelte-github-calendar';
+	import { GithubCalendar } from 'svelte-github-calendar';
 </script>
 
-<GithubCalendar 
-  username="yourusername"
-  summary_text="Summary of {name}'s GitHub activity"
-  global_stats={true}
-  responsive={true}
-  tooltips={true}
-  cache={60}
-  class="my-custom-class"
+<GithubCalendar
+	username="yourusername"
+	summary_text="Summary of {name}'s GitHub activity"
+	global_stats={true}
+	responsive={true}
+	tooltips={true}
+	cache={60}
+	class="my-custom-class"
 />
 ```
 
 ## Props
 
 | Prop           | Type       | Default      | Description                              |
-|----------------|------------|--------------|------------------------------------------|
+| -------------- | ---------- | ------------ | ---------------------------------------- |
 | `username`     | `string`   | **Required** | GitHub username to display calendar for  |
 | `summary_text` | `string`   | `undefined`  | Custom summary text template.            |
 | `proxy`        | `function` | `undefined`  | Custom proxy function for API requests   |
@@ -65,6 +65,7 @@ This library is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contributing
 
 Contributions are welcome! Feel free to:
+
 - Report bugs
 - Suggest new features
 - Submit pull requests
@@ -73,5 +74,6 @@ Contributions are welcome! Feel free to:
 ## Troubleshooting
 
 ### Calendar not loading
+
 - Ensure the username is valid and public
 - Verify network connectivity
