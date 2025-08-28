@@ -1,5 +1,5 @@
 <script lang="ts">
-	// @ts-ignore
+	// @ts-expect-error
 	import GithubCalendar from 'github-calendar';
 	import { onMount } from 'svelte';
 
