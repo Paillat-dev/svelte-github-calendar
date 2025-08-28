@@ -56,7 +56,6 @@
 		"svelte"
 	],
 	"dependencies": {
-		"esbuild": "^0.25.9",
 		"github-calendar": "^2.3.4"
 	}
 }

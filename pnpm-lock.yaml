@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      esbuild:
-        specifier: ^0.25.9
-        version: 0.25.9
       github-calendar:
         specifier: ^2.3.4
         version: 2.3.4
