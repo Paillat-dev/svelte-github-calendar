@@ -53,4 +53,4 @@ jobs:
         run: pnpm build
 
       - name: Publish to NPM
-        run: pnpm publish --access public --provenance --no-git-checks --tag ${{ steps.version.outputs.tag }}
+        run: pnpm publish --access public --no-git-checks --tag ${{ steps.version.outputs.tag }}
