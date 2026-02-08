@@ -83,7 +83,7 @@
 			font-family: Helvetica, arial !important;
 			border: 1px solid #dddddd !important;
 			border-radius: 3px !important;
-			min-height: 243px !important;
+			min-height: 243px;
 			text-align: center !important;
 			margin: 0 auto !important;
 		}
