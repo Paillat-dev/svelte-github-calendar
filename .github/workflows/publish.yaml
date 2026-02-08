@@ -35,6 +35,15 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Publishing version: $VERSION"
+          
+          if [[ $VERSION =~ - ]]; then
+            TAG=$(echo $VERSION | sed -E 's/.*-([^.]+).*/\1/')
+            echo "tag=$TAG" >> $GITHUB_OUTPUT
+            echo "Prerelease detected, using tag: $TAG"
+          else
+            echo "tag=latest" >> $GITHUB_OUTPUT
+            echo "Stable release, using tag: latest"
+          fi
 
       - name: Update package.json version
         run: |
@@ -43,10 +52,5 @@ jobs:
       - name: Build package
         run: pnpm build
 
-      - name: Set publishing auth config
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
       - name: Publish to NPM
-        run: pnpm publish --access public --provenance --no-git-checks
+        run: pnpm publish --access public --provenance --no-git-checks --tag ${{ steps.version.outputs.tag }}
