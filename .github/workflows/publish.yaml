@@ -35,7 +35,7 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Publishing version: $VERSION"
-          
+
           if [[ $VERSION =~ - ]]; then
             TAG=$(echo $VERSION | sed -E 's/.*-([^.]+).*/\1/')
             echo "tag=$TAG" >> $GITHUB_OUTPUT
